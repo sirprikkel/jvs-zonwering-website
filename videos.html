@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video's — JVS Zonwering</title>
+  <meta name="description" content="Montagevideo's, productvideo's en reclames van JVS Zonwering. Bekijk hoe u uw zonwering monteert en afstelt.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { primary: '#0F172A', secondary: '#334155', cta: '#0369A1', ctaHover: '#025a8c', background: '#F8FAFC', textDark: '#020617' },
+        fontFamily: { heading: ['Outfit','sans-serif'], body: ['Work Sans','sans-serif'] },
+      }}
+    }
+  </script>
+  <style>
+    body { font-family: 'Work Sans', sans-serif; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Outfit', sans-serif; }
+    .hover-shift { transition: all 250ms ease; }
+    .hover-shift:hover { background-color: #0F172A !important; transform: translateY(-4px); box-shadow: 0 20px 25px rgba(15,23,42,0.15); }
+    .hover-shift:hover h3, .hover-shift:hover h4, .hover-shift:hover p, .hover-shift:hover span { color: #F8FAFC !important; }
+    .category-btn { transition: all 200ms ease; }
+    .category-btn.active, .category-btn:hover { background-color: #0369A1; color: white; }
+    @media (prefers-reduced-motion: reduce) { .hover-shift { transition: none; } }
+  </style>
+</head>
+<body class="bg-background text-textDark">
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-primary/95 backdrop-blur-sm z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="/" class="flex items-center gap-3 cursor-pointer">
+        <img src="images/logo.jpg" alt="JVS Zonwering logo" class="h-10 w-10 rounded-lg object-cover">
+        <span class="font-heading font-bold text-white text-xl">JVS Zonwering</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Home</a>
+        <a href="diensten.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Diensten</a>
+        <a href="over-ons.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Over Ons</a>
+        <a href="galerij.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Galerij</a>
+        <a href="blog.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Blog</a>
+        <a href="videos.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Video's</a>
+        <a href="brochures.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Brochures</a>
+        <a href="contact.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Contact</a>
+        <a href="contact.html" class="bg-cta hover:bg-ctaHover text-white px-5 py-2.5 rounded-lg font-semibold transition-all duration-200 cursor-pointer">Offerte Aanvragen</a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-white cursor-pointer p-2 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-primary border-t border-white/10">
+      <div class="px-4 py-4 flex flex-col gap-3">
+        <a href="/" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Home</a>
+        <a href="diensten.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Diensten</a>
+        <a href="over-ons.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Over Ons</a>
+        <a href="galerij.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Galerij</a>
+        <a href="blog.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Blog</a>
+        <a href="videos.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Video's</a>
+        <a href="brochures.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Brochures</a>
+        <a href="contact.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-24 pb-16 md:pt-32 md:pb-20 bg-primary">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+      <h1 class="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl text-white mb-4">Video's</h1>
+      <p class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto">Montagevideo's, productdemo's en meer. Bekijk hoe u uw zonwering monteert en afstelt.</p>
+    </div>
+  </section>
+
+  <!-- Category Filter -->
+  <section class="bg-white border-b border-gray-100 sticky top-16 z-40">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 flex gap-2 overflow-x-auto">
+      <button class="category-btn active px-4 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-secondary whitespace-nowrap cursor-pointer min-h-[44px]" onclick="filterCat('all',this)">Alle</button>
+      <button class="category-btn px-4 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-secondary whitespace-nowrap cursor-pointer min-h-[44px]" onclick="filterCat('montage',this)">Montage</button>
+      <button class="category-btn px-4 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-secondary whitespace-nowrap cursor-pointer min-h-[44px]" onclick="filterCat('producten',this)">Producten</button>
+      <button class="category-btn px-4 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-secondary whitespace-nowrap cursor-pointer min-h-[44px]" onclick="filterCat('somfy',this)">Somfy IO</button>
+      <button class="category-btn px-4 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-secondary whitespace-nowrap cursor-pointer min-h-[44px]" onclick="filterCat('buitenleven',this)">Buitenleven</button>
+      <button class="category-btn px-4 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-secondary whitespace-nowrap cursor-pointer min-h-[44px]" onclick="filterCat('reclame',this)">Reclames</button>
+      <button class="category-btn px-4 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-secondary whitespace-nowrap cursor-pointer min-h-[44px]" onclick="filterCat('overig',this)">Overig</button>
+    </div>
+  </section>
+
+  <!-- Videos -->
+  <section class="py-20 bg-background">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div id="videoGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Montage Videos -->
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="montage">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Montage</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Smart Ritsscreen monteren</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="montage">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Montage</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Universeel Ritsscreen monteren</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="montage">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Montage</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Rolluik monteren</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="montage">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Montage</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Rolluik elektrisch aansluiten</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="montage">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Montage</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Bandopwinder aansluiten</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="montage">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Montage</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Koordopwinder aansluiten</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="montage">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Montage</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Spiekozijn maken</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="montage">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Montage</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">JVSolux motor afstellen met draaistiften</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="montage">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Montage</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Arras RTS motor instellen</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="montage">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Montage</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Afstandsbediening instellen</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="montage">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Montage</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Schuifglaswand montage</h3>
+          </div>
+        </div>
+
+        <!-- Montage Verandadaken -->
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="montage">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Montage</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Verandadak Bosco montage</h3>
+          </div>
+        </div>
+
+        <!-- Producten -->
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="producten">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Producten</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">JVS 75 Screen in actie bij klant</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="producten">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Producten</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Rolluik AR39 Alutech</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="producten">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Producten</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Wind-vast Lock Screen</h3>
+          </div>
+        </div>
+
+        <!-- Somfy IO -->
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="somfy">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Somfy IO</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Eindpositie IO motor aanpassen</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="somfy">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Somfy IO</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Sunea IO afstellen en aanmelden</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="somfy">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Somfy IO</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Somfy RS100 Solar IO</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="somfy">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Somfy IO</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Eolis 3D IO windbeveiliging</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="somfy">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Somfy IO</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">IO motor resetten</h3>
+          </div>
+        </div>
+
+        <!-- Buitenleven -->
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="buitenleven">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Buitenleven</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Bosco verandadak</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="buitenleven">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Buitenleven</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Glasschuifwand</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="buitenleven">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Buitenleven</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Tuinkamer</h3>
+          </div>
+        </div>
+
+        <!-- Reclames -->
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="reclame">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Reclame</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">JVS Zonwering — RTL Wooninspiraties</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="reclame">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Reclame</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">JVS Zonwering — Billboard RTL Weer</h3>
+          </div>
+        </div>
+
+        <!-- Inmeet -->
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="montage">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Montage</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Inmeet-instructie rolluiken</h3>
+          </div>
+        </div>
+
+        <!-- Behind the Scenes -->
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="overig">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Behind the Scenes</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Behind the Scenes — Garagedeuren montage</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="overig">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Behind the Scenes</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">Behind the Scenes — Kozijnen montage</h3>
+          </div>
+        </div>
+
+        <div class="video-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-cat="overig">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Jubileum</span>
+            <h3 class="font-heading font-bold text-lg text-primary mt-3">JVS Zonwering 15-jarig jubileum</h3>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="https://www.youtube.com/@JVSZonwering" target="_blank" rel="noopener" class="inline-flex items-center gap-3 bg-cta hover:bg-ctaHover text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 cursor-pointer min-h-[44px]">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          Bekijk alle video's op YouTube
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary pt-12 pb-6 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-white/40 text-sm">© 2026 JVS Zonwering BV — KvK 64342077</p>
+      <p class="text-white/40 text-sm">Gebouwd door <a href="https://www.code-lieshout.nl" class="text-cta hover:text-white transition-colors duration-200 cursor-pointer">Code Lieshout</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuBtn').addEventListener('click', () => { document.getElementById('mobileMenu').classList.toggle('hidden'); });
+    function filterCat(cat, btn) {
+      document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.video-card').forEach(c => {
+        c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
