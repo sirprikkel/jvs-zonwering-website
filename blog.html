@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — JVS Zonwering</title>
+  <meta name="description" content="Professioneel advies, inspiratie en de nieuwste trends op het gebied van zonwering. Tips, onderhoud en productinformatie van JVS Zonwering.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { primary: '#0F172A', secondary: '#334155', cta: '#0369A1', ctaHover: '#025a8c', background: '#F8FAFC', textDark: '#020617' },
+        fontFamily: { heading: ['Outfit','sans-serif'], body: ['Work Sans','sans-serif'] },
+      }}
+    }
+  </script>
+  <style>
+    * { scroll-behavior: smooth; }
+    body { font-family: 'Work Sans', sans-serif; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Outfit', sans-serif; }
+    .hover-shift { transition: all 250ms ease; }
+    .hover-shift:hover { background-color: #0F172A !important; transform: translateY(-4px); box-shadow: 0 20px 25px rgba(15,23,42,0.15); }
+    .hover-shift:hover h3, .hover-shift:hover h4, .hover-shift:hover p, .hover-shift:hover span { color: #F8FAFC !important; }
+    .category-btn { transition: all 200ms ease; }
+    .category-btn.active, .category-btn:hover { background-color: #0369A1; color: white; }
+    @media (prefers-reduced-motion: reduce) { .hover-shift { transition: none; } }
+  </style>
+</head>
+<body class="bg-background text-textDark">
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-primary/95 backdrop-blur-sm z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="/" class="flex items-center gap-3 cursor-pointer">
+        <img src="images/logo.jpg" alt="JVS Zonwering logo" class="h-10 w-10 rounded-lg object-cover">
+        <span class="font-heading font-bold text-white text-xl">JVS Zonwering</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Home</a>
+        <a href="diensten.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Diensten</a>
+        <a href="over-ons.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Over Ons</a>
+        <a href="galerij.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Galerij</a>
+        <a href="blog.html" class="text-white border-b-2 border-cta pb-0.5 cursor-pointer font-medium">Blog</a>
+        <a href="contact.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Contact</a>
+        <a href="contact.html" class="bg-cta hover:bg-ctaHover text-white px-5 py-2.5 rounded-lg font-semibold transition-all duration-200 cursor-pointer">Offerte Aanvragen</a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-white cursor-pointer p-2 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-primary border-t border-white/10">
+      <div class="px-4 py-4 flex flex-col gap-3">
+        <a href="/" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Home</a>
+        <a href="diensten.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Diensten</a>
+        <a href="over-ons.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Over Ons</a>
+        <a href="galerij.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Galerij</a>
+        <a href="blog.html" class="text-white py-3 px-4 rounded-lg bg-white/10 cursor-pointer min-h-[44px] flex items-center">Blog</a>
+        <a href="contact.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-24 pb-16 md:pt-32 md:pb-20 bg-primary">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+      <h1 class="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl text-white mb-4">Blog</h1>
+      <p class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto">Professioneel advies, inspiratie en de nieuwste trends op het gebied van zonwering.</p>
+    </div>
+  </section>
+
+  <!-- Category Filter -->
+  <section class="bg-white border-b border-gray-100 sticky top-16 z-40">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 flex gap-2 overflow-x-auto">
+      <button class="category-btn active px-4 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-secondary whitespace-nowrap cursor-pointer min-h-[44px]" onclick="filterCategory('all', this)">Alle</button>
+      <button class="category-btn px-4 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-secondary whitespace-nowrap cursor-pointer min-h-[44px]" onclick="filterCategory('rolluiken', this)">Rolluiken</button>
+      <button class="category-btn px-4 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-secondary whitespace-nowrap cursor-pointer min-h-[44px]" onclick="filterCategory('screens', this)">Screens</button>
+      <button class="category-btn px-4 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-secondary whitespace-nowrap cursor-pointer min-h-[44px]" onclick="filterCategory('binnenzonwering', this)">Binnenzonwering</button>
+      <button class="category-btn px-4 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-secondary whitespace-nowrap cursor-pointer min-h-[44px]" onclick="filterCategory('verandas', this)">Veranda's</button>
+      <button class="category-btn px-4 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-secondary whitespace-nowrap cursor-pointer min-h-[44px]" onclick="filterCategory('garagedeuren', this)">Garagedeuren</button>
+      <button class="category-btn px-4 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-secondary whitespace-nowrap cursor-pointer min-h-[44px]" onclick="filterCategory('vloeren', this)">Vloeren</button>
+      <button class="category-btn px-4 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-secondary whitespace-nowrap cursor-pointer min-h-[44px]" onclick="filterCategory('tips', this)">Tips & Onderhoud</button>
+    </div>
+  </section>
+
+  <!-- Blog Articles -->
+  <section class="py-20 bg-background">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+      <!-- Intro -->
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <p class="text-secondary text-lg leading-relaxed">Met jarenlange ervaring in de branche en een passie voor stijlvolle en functionele zonwering, delen we graag onze kennis met u. Praktische tips, productinformatie en inspiratie — het staat allemaal hier.</p>
+      </div>
+
+      <!-- Articles Grid -->
+      <div id="blogGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Rolluiken -->
+        <article class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-category="rolluiken">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 4h18v2H3V4zm0 4h18v2H3V8zm0 4h18v2H3v-2zm0 4h18v2H3v-2zm0 4h18v2H3v-2z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Rolluiken</span>
+            <h3 class="font-heading font-bold text-xl text-primary mt-3 mb-2">Geld besparen op (én met) uw zonwering</h3>
+            <p class="text-secondary text-sm leading-relaxed">Hoge energierekeningen, benzineprijzen die blijven stijgen en ook de boodschappen die steeds maar duurder worden. Ontdek hoe zonwering u kan helpen besparen.</p>
+          </div>
+        </article>
+
+        <article class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-category="rolluiken">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 4h18v2H3V4zm0 4h18v2H3V8zm0 4h18v2H3v-2zm0 4h18v2H3v-2zm0 4h18v2H3v-2z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Rolluiken</span>
+            <h3 class="font-heading font-bold text-xl text-primary mt-3 mb-2">Alles over rolluiken isolatie in zomer en winter</h3>
+            <p class="text-secondary text-sm leading-relaxed">Het besparen van energie is niet alleen goed voor het milieu, maar ook voor uw energierekening. Door het gebruik van rolluiken kunt u veel energie besparen.</p>
+          </div>
+        </article>
+
+        <!-- Rolluiken info block -->
+        <article class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-category="rolluiken">
+          <div class="aspect-video overflow-hidden">
+            <img src="images/rolluik.jpg" alt="Rolluiken" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Rolluiken</span>
+            <h3 class="font-heading font-bold text-xl text-primary mt-3 mb-2">Veiliger wonen, energie besparen</h3>
+            <p class="text-secondary text-sm leading-relaxed">Rolluiken combineren een veilig gevoel en laten het energieverbruik dalen. U kunt uw rolluiken geheel naar eigen wens samenstellen met verschillende omkastingen.</p>
+          </div>
+        </article>
+
+        <!-- Screens -->
+        <article class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-category="screens">
+          <div class="aspect-video overflow-hidden">
+            <img src="images/screen.jpg" alt="Screens" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Screens</span>
+            <h3 class="font-heading font-bold text-xl text-primary mt-3 mb-2">Screens als effectieve zonwering</h3>
+            <p class="text-secondary text-sm leading-relaxed">Screens zonwering hangt aan de buitenkant van uw woning en is een goed alternatief voor de duurdere rolluiken. Maar hoe gebruikt u deze het meest effectief?</p>
+          </div>
+        </article>
+
+        <article class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-category="screens">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5h16M4 9h16M4 13h16M4 17h16"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Screens</span>
+            <h3 class="font-heading font-bold text-xl text-primary mt-3 mb-2">Weinig zicht naar binnen, isolerend en verduisterend</h3>
+            <p class="text-secondary text-sm leading-relaxed">Screens zijn vlak hangende doeken ter verduistering van ramen. Ze zorgen voor goede zonwering maar behouden ook het zicht naar buiten.</p>
+          </div>
+        </article>
+
+        <!-- Binnenzonwering -->
+        <article class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-category="binnenzonwering">
+          <div class="aspect-video overflow-hidden">
+            <img src="images/jaloezieen.jpg" alt="Jaloezieën" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Binnenzonwering</span>
+            <h3 class="font-heading font-bold text-xl text-primary mt-3 mb-2">Transformeer uw huis met jaloezieën</h3>
+            <p class="text-secondary text-sm leading-relaxed">Welke jaloezieën passen in uw interieur? Er is veel keus uit merken, maten, kleuren en materialen. Wij helpen u bij de juiste keuze.</p>
+          </div>
+        </article>
+
+        <article class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-category="binnenzonwering">
+          <div class="aspect-video overflow-hidden">
+            <img src="images/binnenzonwering.jpg" alt="Binnenzonwering" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Binnenzonwering</span>
+            <h3 class="font-heading font-bold text-xl text-primary mt-3 mb-2">Verschillende soorten, maten, kleuren en functies</h3>
+            <p class="text-secondary text-sm leading-relaxed">De keuze voor binnenzonwering hangt af van locatie, gewenst privacyniveau, lichtdoorlaatbaarheid, design en bedieningsmogelijkheden.</p>
+          </div>
+        </article>
+
+        <!-- Veranda's -->
+        <article class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-category="verandas">
+          <div class="aspect-video overflow-hidden">
+            <img src="images/verandas.jpg" alt="Veranda" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Veranda's</span>
+            <h3 class="font-heading font-bold text-xl text-primary mt-3 mb-2">Een veranda aan huis</h3>
+            <p class="text-secondary text-sm leading-relaxed">Zit u graag buiten? Het wisselvallige weer in Nederland blijft een veelvoorkomend probleem. Maar wist u dat er een oplossing is?</p>
+          </div>
+        </article>
+
+        <!-- Garagedeuren -->
+        <article class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-category="garagedeuren">
+          <div class="aspect-video overflow-hidden">
+            <img src="images/garagedeur.jpg" alt="Garagedeuren" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Garagedeuren</span>
+            <h3 class="font-heading font-bold text-xl text-primary mt-3 mb-2">De perfecte garagedeur voor uw huis</h3>
+            <p class="text-secondary text-sm leading-relaxed">Een garagedeur is niet alleen functioneel, het kan ook de algehele uitstraling en veiligheid van de woning beïnvloeden. Belangrijke overwegingen bij het kiezen.</p>
+          </div>
+        </article>
+
+        <!-- Vloeren -->
+        <article class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-category="vloeren">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4h4v4H4V4zm6 0h4v4h-4V4zm6 0h4v4h-4V4zM4 10h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4zM4 16h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Vloeren</span>
+            <h3 class="font-heading font-bold text-xl text-primary mt-3 mb-2">Welke vloer is het meest geschikt voor mijn woning?</h3>
+            <p class="text-secondary text-sm leading-relaxed">PVC of laminaat? Een vloer moet een echte eye-catcher zijn. Wij informeren u over de voordelen en nadelen van de verschillende vloeren.</p>
+          </div>
+        </article>
+
+        <article class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-category="vloeren">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4h4v4H4V4zm6 0h4v4h-4V4zm6 0h4v4h-4V4zM4 10h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4zM4 16h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Vloeren</span>
+            <h3 class="font-heading font-bold text-xl text-primary mt-3 mb-2">Douwes Dekker collectie bij JVS Zonwering</h3>
+            <p class="text-secondary text-sm leading-relaxed">Een uitgebreide collectie van PVC vloeren, PVC-HDF vloeren en laminaat vloeren. Elke soort heeft eigen voordelen en nadelen.</p>
+          </div>
+        </article>
+
+        <!-- Tips & Onderhoud -->
+        <article class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-category="tips">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Tips</span>
+            <h3 class="font-heading font-bold text-xl text-primary mt-3 mb-2">Vier tips om de warmte buiten te houden</h3>
+            <p class="text-secondary text-sm leading-relaxed">Wat te doen in de hitte? Hoe kunt u uw woning zo koel mogelijk houden tijdens warme zomerdagen?</p>
+          </div>
+        </article>
+
+        <article class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-category="tips">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Tips</span>
+            <h3 class="font-heading font-bold text-xl text-primary mt-3 mb-2">Alles over Somfy RTS en Somfy IO</h3>
+            <p class="text-secondary text-sm leading-relaxed">Somfy is een Frans bedrijf dat in 1969 begon met het innoveren van motoren voor zonweringen. Ontdek de verschillen tussen RTS en IO.</p>
+          </div>
+        </article>
+
+        <article class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-category="tips">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Tips</span>
+            <h3 class="font-heading font-bold text-xl text-primary mt-3 mb-2">Global Shading Day</h3>
+            <p class="text-secondary text-sm leading-relaxed">Op 21 maart is het Global Shading Day om klanten en beleidsmakers te informeren over de voordelen van zonwering.</p>
+          </div>
+        </article>
+
+        <article class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-category="tips">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Tips</span>
+            <h3 class="font-heading font-bold text-xl text-primary mt-3 mb-2">8 tips voor het kopen van een zonwering!</h3>
+            <p class="text-secondary text-sm leading-relaxed">Het selecteren van de juiste zonwering kan een uitdagende taak zijn. Met de juiste tips maakt u de beste keuze.</p>
+          </div>
+        </article>
+
+        <article class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-category="tips">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Tips</span>
+            <h3 class="font-heading font-bold text-xl text-primary mt-3 mb-2">Voordelen van zonwering kopen in februari</h3>
+            <p class="text-secondary text-sm leading-relaxed">Februari is de beste maand om uw bestelling te plaatsen. Profiteer van kortere levertijden en vroege aanbiedingen.</p>
+          </div>
+        </article>
+
+        <article class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover-shift cursor-pointer" data-category="tips">
+          <div class="aspect-video bg-primary/5 flex items-center justify-center">
+            <svg class="w-16 h-16 text-cta/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cta bg-cta/10 px-3 py-1 rounded-full">Tips</span>
+            <h3 class="font-heading font-bold text-xl text-primary mt-3 mb-2">Zonwering voor seizoensovergangen</h3>
+            <p class="text-secondary text-sm leading-relaxed">De overgang van warme naar koudere maanden is een perfect moment om het binnenklimaat aan te passen met de juiste zonwering.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-primary">
+    <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-white mb-4">Heeft u nog vragen?</h2>
+      <p class="text-white/70 text-lg mb-8">Plan een showroom afspraak en krijg persoonlijk advies van een van onze specialisten.</p>
+      <a href="contact.html" class="bg-cta hover:bg-ctaHover text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 cursor-pointer min-h-[44px] inline-flex items-center">Maak een Afspraak</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary pt-12 pb-6 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-white/40 text-sm">© 2026 JVS Zonwering BV — KvK 64342077</p>
+      <p class="text-white/40 text-sm">Gebouwd door <a href="https://www.code-lieshout.nl" class="text-cta hover:text-white transition-colors duration-200 cursor-pointer">Code Lieshout</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuBtn').addEventListener('click', () => { document.getElementById('mobileMenu').classList.toggle('hidden'); });
+
+    function filterCategory(cat, btn) {
+      // Update active button
+      document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Filter cards
+      document.querySelectorAll('.blog-card').forEach(card => {
+        if (cat === 'all' || card.dataset.category === cat) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
