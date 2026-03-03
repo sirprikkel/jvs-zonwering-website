@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Over Ons — JVS Zonwering</title>
+  <meta name="description" content="JVS Zonwering: sinds 2009 uw specialist voor maatwerk zonwering. Showroom in Ravenstein, eigen bezorgdienst, 24 webshops, 2067+ Google reviews.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { primary: '#0F172A', secondary: '#334155', cta: '#0369A1', ctaHover: '#025a8c', background: '#F8FAFC', textDark: '#020617' },
+        fontFamily: { heading: ['Outfit','sans-serif'], body: ['Work Sans','sans-serif'] },
+      }}
+    }
+  </script>
+  <style>
+    * { scroll-behavior: smooth; }
+    body { font-family: 'Work Sans', sans-serif; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Outfit', sans-serif; }
+  </style>
+</head>
+<body class="bg-background text-textDark">
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-primary/95 backdrop-blur-sm z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="/" class="flex items-center gap-3 cursor-pointer">
+        <img src="images/logo.jpg" alt="JVS Zonwering logo" class="h-10 w-10 rounded-lg object-cover">
+        <span class="font-heading font-bold text-white text-xl">JVS Zonwering</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Home</a>
+        <a href="diensten.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Diensten</a>
+        <a href="over-ons.html" class="text-white border-b-2 border-cta pb-0.5 cursor-pointer font-medium">Over Ons</a>
+        <a href="galerij.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Galerij</a>
+        <a href="contact.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Contact</a>
+        <a href="contact.html" class="bg-cta hover:bg-ctaHover text-white px-5 py-2.5 rounded-lg font-semibold transition-all duration-200 cursor-pointer">Offerte Aanvragen</a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-white cursor-pointer p-2 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-primary border-t border-white/10">
+      <div class="px-4 py-4 flex flex-col gap-3">
+        <a href="/" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Home</a>
+        <a href="diensten.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Diensten</a>
+        <a href="over-ons.html" class="text-white py-3 px-4 rounded-lg bg-white/10 cursor-pointer min-h-[44px] flex items-center">Over Ons</a>
+        <a href="galerij.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Galerij</a>
+        <a href="contact.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-24 pb-16 md:pt-32 md:pb-20 bg-primary">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+      <h1 class="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl text-white mb-4">Over JVS Zonwering</h1>
+      <p class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto">Sinds 2009 uw specialist voor betaalbare, hoogwaardige zonwering.</p>
+    </div>
+  </section>
+
+  <!-- Verhaal -->
+  <section class="py-20 bg-background">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <img src="images/google/google_place_2.jpg" alt="JVS Zonwering showroom" class="rounded-2xl shadow-xl w-full" loading="lazy">
+        </div>
+        <div>
+          <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-primary mb-6">Uw Zonweringspartner</h2>
+          <p class="text-secondary leading-relaxed mb-4">Bij JVS Zonwering bent u aan het juiste adres voor betaalbare zonwering in Nederland en België. JVS Zonwering staat bekend om hun uitstekende prijs-kwaliteitverhouding en biedt een ruim assortiment aan zonwering tegen de scherpste prijzen.</p>
+          <p class="text-secondary leading-relaxed mb-4">Of u nu op zoek bent naar rolluiken voor uw woning, kantoor of bedrijfspand, JVS Zonwering heeft een breed scala aan opties die voldoen aan uw behoeften en budget.</p>
+          <p class="text-secondary leading-relaxed">Ons team staat klaar om u te helpen bij het kiezen van de juiste zonwering voor uw specifieke situatie. Wij begrijpen dat elk project uniek is en streven ernaar om op maat gemaakte oplossingen te bieden die perfect passen bij uw wensen en budget.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USPs -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="bg-background rounded-2xl p-8 border border-gray-100">
+          <div class="w-12 h-12 bg-cta/10 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-cta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-primary mb-3">Snelste Maatwerkbezorging</h3>
+          <ul class="space-y-2 text-secondary">
+            <li>• Eigen bezorgdienst voor optimale controle en klantgerichte service</li>
+            <li>• Snelle levering van maatwerk producten</li>
+            <li>• Bezorging door heel Nederland en België</li>
+            <li>• Online bestelstatus bijhouden</li>
+            <li>• SMS-notificatie 30 minuten voor levering</li>
+          </ul>
+        </div>
+        <div class="bg-background rounded-2xl p-8 border border-gray-100">
+          <div class="w-12 h-12 bg-cta/10 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-cta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-primary mb-3">Uitstekende Klantenservice</h3>
+          <ul class="space-y-2 text-secondary">
+            <li>• Professioneel advies binnen 24 uur</li>
+            <li>• Directe prijsindicatie voor transparantie</li>
+            <li>• Ruime showroom, 6 dagen per week geopend</li>
+            <li>• Flexibele betalingsmogelijkheden</li>
+            <li>• Samenwerking met dealers voor regionale toegankelijkheid</li>
+          </ul>
+        </div>
+        <div class="bg-background rounded-2xl p-8 border border-gray-100">
+          <div class="w-12 h-12 bg-cta/10 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-cta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-primary mb-3">Maatwerk Oplossingen</h3>
+          <ul class="space-y-2 text-secondary">
+            <li>• Breed assortiment binnen- en buitenzonwering</li>
+            <li>• Online configuratiemogelijkheid</li>
+            <li>• Zonweringssystemen voor energie-efficiëntie</li>
+            <li>• Diverse bedieningstypen voor optimaal gemak</li>
+            <li>• Stalenboeken beschikbaar voor kleur- en materiaalkeuze</li>
+          </ul>
+        </div>
+        <div class="bg-background rounded-2xl p-8 border border-gray-100">
+          <div class="w-12 h-12 bg-cta/10 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-cta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-primary mb-3">Betrouwbaar & Professioneel</h3>
+          <ul class="space-y-2 text-secondary">
+            <li>• Ruime ervaring in de zonweringsindustrie</li>
+            <li>• Uitstekende klantbeoordelingen en referenties</li>
+            <li>• Transparante garantievoorwaarden</li>
+            <li>• Handleidingen en montageinstructies online beschikbaar</li>
+            <li>• Klantenservice voor nazorg en ondersteuning na aankoop</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trends -->
+  <section class="py-20 bg-background">
+    <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-primary mb-6">Solar Zonwering & Smart Home</h2>
+      <p class="text-secondary text-lg leading-relaxed mb-4">Bij JVS Zonwering spelen wij in op de laatste trends. Ervaar de kracht van zonne-energie met onze solar zonwering, waarmee u niet alleen energie bespaart, maar ook bijdraagt aan een duurzamer milieu.</p>
+      <p class="text-secondary text-lg leading-relaxed">Daarnaast brengen we uw zonwering naar het volgende niveau met slimme thuisoplossingen. Bedien uw zonwering eenvoudig met uw smartphone of stemassistent, waardoor comfort en efficiëntie samenkomen in uw moderne leefruimte.</p>
+    </div>
+  </section>
+
+  <!-- Vacatures -->
+  <section class="py-20 bg-primary">
+    <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-white mb-6">Werken bij JVS Zonwering?</h2>
+      <p class="text-white/80 text-lg mb-8">We zijn altijd op zoek naar enthousiaste collega's om ons team te versterken.</p>
+      <a href="contact.html" class="bg-cta hover:bg-ctaHover text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 cursor-pointer min-h-[44px] inline-flex items-center">Neem Contact Op</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary pt-12 pb-6 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-white/40 text-sm">© 2026 JVS Zonwering BV — KvK 64342077</p>
+      <p class="text-white/40 text-sm">Gebouwd door <a href="https://www.code-lieshout.nl" class="text-cta hover:text-white transition-colors duration-200 cursor-pointer">Code Lieshout</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

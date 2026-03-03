@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diensten — JVS Zonwering</title>
+  <meta name="description" content="Compleet assortiment zonwering: screens, rolluiken, markiezen, veranda's, zonneschermen, garagedeuren, glaswanden, horren, rolgordijnen, jaloezieën en meer.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { primary: '#0F172A', secondary: '#334155', cta: '#0369A1', ctaHover: '#025a8c', background: '#F8FAFC', textDark: '#020617' },
+        fontFamily: { heading: ['Outfit','sans-serif'], body: ['Work Sans','sans-serif'] },
+      }}
+    }
+  </script>
+  <style>
+    * { scroll-behavior: smooth; }
+    body { font-family: 'Work Sans', sans-serif; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Outfit', sans-serif; }
+    .hover-shift { transition: all 250ms ease; }
+    .hover-shift:hover { background-color: #0F172A !important; color: white !important; transform: translateY(-4px); box-shadow: 0 20px 25px rgba(15,23,42,0.15); }
+    @media (prefers-reduced-motion: reduce) { .hover-shift { transition: none; } }
+  </style>
+</head>
+<body class="bg-background text-textDark">
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-primary/95 backdrop-blur-sm z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="/" class="flex items-center gap-3 cursor-pointer">
+        <img src="images/logo.jpg" alt="JVS Zonwering logo" class="h-10 w-10 rounded-lg object-cover">
+        <span class="font-heading font-bold text-white text-xl">JVS Zonwering</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Home</a>
+        <a href="diensten.html" class="text-white transition-colors duration-200 cursor-pointer font-medium border-b-2 border-cta pb-0.5">Diensten</a>
+        <a href="over-ons.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Over Ons</a>
+        <a href="galerij.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Galerij</a>
+        <a href="contact.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Contact</a>
+        <a href="contact.html" class="bg-cta hover:bg-ctaHover text-white px-5 py-2.5 rounded-lg font-semibold transition-all duration-200 cursor-pointer">Offerte Aanvragen</a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-white cursor-pointer p-2 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-primary border-t border-white/10">
+      <div class="px-4 py-4 flex flex-col gap-3">
+        <a href="/" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Home</a>
+        <a href="diensten.html" class="text-white py-3 px-4 rounded-lg bg-white/10 cursor-pointer min-h-[44px] flex items-center">Diensten</a>
+        <a href="over-ons.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Over Ons</a>
+        <a href="galerij.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Galerij</a>
+        <a href="contact.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-24 pb-16 md:pt-32 md:pb-20 bg-primary">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+      <h1 class="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl text-white mb-4">Ons Assortiment</h1>
+      <p class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto">Van buitenzonwering tot binnenzonwering — alles op maat, tegen discountprijzen.</p>
+    </div>
+  </section>
+
+  <!-- Buitenzonwering -->
+  <section class="py-20 bg-background">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-primary mb-12">Buitenzonwering</h2>
+
+      <div class="space-y-16">
+        <div id="screens" class="grid md:grid-cols-2 gap-12 items-center scroll-mt-24">
+          <img src="images/screen.jpg" alt="Screens" class="rounded-2xl shadow-lg w-full aspect-video object-cover" loading="lazy">
+          <div>
+            <h3 class="font-heading font-bold text-2xl md:text-3xl text-primary mb-4">Screens</h3>
+            <p class="text-secondary leading-relaxed mb-4">Bescherm uw privacy met eigentijdse zonwering screens. Screens houden de warmte buiten terwijl u het uitzicht behoudt. Ideaal voor grote ramen en puien.</p>
+            <a href="contact.html" class="inline-flex items-center gap-2 bg-cta hover:bg-ctaHover text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer min-h-[44px]">Offerte Aanvragen</a>
+          </div>
+        </div>
+
+        <div id="rolluiken" class="grid md:grid-cols-2 gap-12 items-center scroll-mt-24">
+          <div class="md:order-2">
+            <img src="images/rolluik.jpg" alt="Rolluiken" class="rounded-2xl shadow-lg w-full aspect-video object-cover" loading="lazy">
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-2xl md:text-3xl text-primary mb-4">Rolluiken</h3>
+            <p class="text-secondary leading-relaxed mb-4">Optimaliseer isolatie en veiligheid met robuuste rolluiken. Beschikbaar in diverse RAL-kleuren, met handmatige of elektrische bediening. Ook solar-aangedreven varianten beschikbaar.</p>
+            <a href="contact.html" class="inline-flex items-center gap-2 bg-cta hover:bg-ctaHover text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer min-h-[44px]">Offerte Aanvragen</a>
+          </div>
+        </div>
+
+        <div id="markiezen" class="grid md:grid-cols-2 gap-12 items-center scroll-mt-24">
+          <img src="images/markiezen.jpg" alt="Markiezen" class="rounded-2xl shadow-lg w-full aspect-video object-cover" loading="lazy">
+          <div>
+            <h3 class="font-heading font-bold text-2xl md:text-3xl text-primary mb-4">Markiezen</h3>
+            <p class="text-secondary leading-relaxed mb-4">Voeg karakter toe aan uw gevel met elegante markiezen. Kies uit een breed scala aan doeken en kleuren voor de perfecte uitstraling.</p>
+            <a href="contact.html" class="inline-flex items-center gap-2 bg-cta hover:bg-ctaHover text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer min-h-[44px]">Offerte Aanvragen</a>
+          </div>
+        </div>
+
+        <div id="verandas" class="grid md:grid-cols-2 gap-12 items-center scroll-mt-24">
+          <div class="md:order-2">
+            <img src="images/verandas.jpg" alt="Veranda's" class="rounded-2xl shadow-lg w-full aspect-video object-cover" loading="lazy">
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-2xl md:text-3xl text-primary mb-4">Veranda's</h3>
+            <p class="text-secondary leading-relaxed mb-4">Creëer een harmonieuze buitenruimte met duurzame veranda's. Van vrijstaand tot aangebouwd — geschikt voor elke tuin.</p>
+            <a href="contact.html" class="inline-flex items-center gap-2 bg-cta hover:bg-ctaHover text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer min-h-[44px]">Offerte Aanvragen</a>
+          </div>
+        </div>
+
+        <div id="zonneschermen" class="grid md:grid-cols-2 gap-12 items-center scroll-mt-24">
+          <img src="images/zonnescherm.jpg" alt="Zonneschermen" class="rounded-2xl shadow-lg w-full aspect-video object-cover" loading="lazy">
+          <div>
+            <h3 class="font-heading font-bold text-2xl md:text-3xl text-primary mb-4">Zonneschermen</h3>
+            <p class="text-secondary leading-relaxed mb-4">Geniet van schaduw en comfort met veelzijdige zonneschermen. Beschikbaar in diverse maten en uitvoeringen.</p>
+            <a href="contact.html" class="inline-flex items-center gap-2 bg-cta hover:bg-ctaHover text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer min-h-[44px]">Offerte Aanvragen</a>
+          </div>
+        </div>
+
+        <div id="garagedeuren" class="grid md:grid-cols-2 gap-12 items-center scroll-mt-24">
+          <div class="md:order-2">
+            <img src="images/garagedeur.jpg" alt="Garagedeuren" class="rounded-2xl shadow-lg w-full aspect-video object-cover" loading="lazy">
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-2xl md:text-3xl text-primary mb-4">Garagedeuren</h3>
+            <p class="text-secondary leading-relaxed mb-4">Upgrade uw woning met moderne garagedeuren. Stijlvol, veilig en isolerend.</p>
+            <a href="contact.html" class="inline-flex items-center gap-2 bg-cta hover:bg-ctaHover text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer min-h-[44px]">Offerte Aanvragen</a>
+          </div>
+        </div>
+
+        <div id="glaswanden" class="grid md:grid-cols-2 gap-12 items-center scroll-mt-24">
+          <img src="images/glaswanden.jpg" alt="Glaswanden" class="rounded-2xl shadow-lg w-full aspect-video object-cover" loading="lazy">
+          <div>
+            <h3 class="font-heading font-bold text-2xl md:text-3xl text-primary mb-4">Schuifglaswanden</h3>
+            <p class="text-secondary leading-relaxed mb-4">Breng licht binnen en behoud het uitzicht met transparante schuifglaswanden. Ideaal voor veranda's en terrassen.</p>
+            <a href="contact.html" class="inline-flex items-center gap-2 bg-cta hover:bg-ctaHover text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer min-h-[44px]">Offerte Aanvragen</a>
+          </div>
+        </div>
+
+        <div id="horren" class="grid md:grid-cols-2 gap-12 items-center scroll-mt-24">
+          <div class="md:order-2">
+            <img src="images/horren.jpg" alt="Horren" class="rounded-2xl shadow-lg w-full aspect-video object-cover" loading="lazy">
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-2xl md:text-3xl text-primary mb-4">Horren</h3>
+            <p class="text-secondary leading-relaxed mb-4">Houd insecten buiten met effectieve horren. Inzethorren, plissé hordeuren en meer — alles op maat.</p>
+            <a href="contact.html" class="inline-flex items-center gap-2 bg-cta hover:bg-ctaHover text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer min-h-[44px]">Offerte Aanvragen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Binnenzonwering -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-primary mb-12">Binnenzonwering</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div id="rolgordijnen" class="bg-background rounded-2xl overflow-hidden hover-shift cursor-pointer scroll-mt-24">
+          <img src="images/rolgordijnen.jpg" alt="Rolgordijnen" class="w-full aspect-video object-cover" loading="lazy">
+          <div class="p-6">
+            <h3 class="font-heading font-bold text-xl text-primary mb-2">Rolgordijnen</h3>
+            <p class="text-secondary">Creëer de perfecte ambiance met hoogwaardige rolgordijnen. Beschikbaar in talloze kleuren en materialen.</p>
+          </div>
+        </div>
+        <div id="duoshades" class="bg-background rounded-2xl overflow-hidden hover-shift cursor-pointer scroll-mt-24">
+          <div class="w-full aspect-video bg-cta/5 flex items-center justify-center">
+            <svg class="w-20 h-20 text-cta/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5h16M4 8h16M4 11h16M4 14h16M4 17h16M4 20h16"/></svg>
+          </div>
+          <div class="p-6">
+            <h3 class="font-heading font-bold text-xl text-primary mb-2">Duo Shades</h3>
+            <p class="text-secondary">Geniet van het beste van beide werelden met stijlvolle duo shades. Combineer privacy en lichtinval.</p>
+          </div>
+        </div>
+        <div id="jaloezieen" class="bg-background rounded-2xl overflow-hidden hover-shift cursor-pointer scroll-mt-24">
+          <img src="images/jaloezieen.jpg" alt="Jaloezieën" class="w-full aspect-video object-cover" loading="lazy">
+          <div class="p-6">
+            <h3 class="font-heading font-bold text-xl text-primary mb-2">Jaloezieën</h3>
+            <p class="text-secondary">Breng lichtinval naar uw wens met op maat gemaakte jaloezieën. Aluminium, hout of kunststof.</p>
+          </div>
+        </div>
+        <div id="plisses" class="bg-background rounded-2xl overflow-hidden hover-shift cursor-pointer scroll-mt-24">
+          <div class="w-full aspect-video bg-cta/5 flex items-center justify-center">
+            <svg class="w-20 h-20 text-cta/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 4l3 3-3 3 3 3-3 3 3 3M21 4l-3 3 3 3-3 3 3 3-3 3"/></svg>
+          </div>
+          <div class="p-6">
+            <h3 class="font-heading font-bold text-xl text-primary mb-2">Plissés</h3>
+            <p class="text-secondary">Voeg stijlvolle plooien toe aan uw interieur met veelzijdige plissés. Geschikt voor bijzondere raamvormen.</p>
+          </div>
+        </div>
+        <div id="lamelgordijnen" class="bg-background rounded-2xl overflow-hidden hover-shift cursor-pointer scroll-mt-24">
+          <div class="w-full aspect-video bg-cta/5 flex items-center justify-center">
+            <svg class="w-20 h-20 text-cta/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v16M8 4v16M12 4v16M16 4v16M20 4v16"/></svg>
+          </div>
+          <div class="p-6">
+            <h3 class="font-heading font-bold text-xl text-primary mb-2">Lamelgordijnen</h3>
+            <p class="text-secondary">Creëer een eigentijdse uitstraling met moderne lamelgordijnen. Ideaal voor grotere raampartijen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-primary">
+    <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-white mb-6">Vrijblijvend Advies?</h2>
+      <p class="text-white/80 text-lg mb-8">Neem contact op of bezoek onze showroom in Ravenstein voor persoonlijk advies.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="contact.html" class="bg-cta hover:bg-ctaHover text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 cursor-pointer min-h-[44px]">Neem Contact Op</a>
+        <a href="tel:+31486850119" class="bg-white/10 hover:bg-white/20 text-white border-2 border-white/30 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 cursor-pointer min-h-[44px]">Bel: 0486 850 119</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary pt-12 pb-6 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-white/40 text-sm">© 2026 JVS Zonwering BV — KvK 64342077</p>
+      <p class="text-white/40 text-sm">Gebouwd door <a href="https://www.code-lieshout.nl" class="text-cta hover:text-white transition-colors duration-200 cursor-pointer">Code Lieshout</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

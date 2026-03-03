@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerij — JVS Zonwering</title>
+  <meta name="description" content="Bekijk projecten en realisaties van JVS Zonwering. Screens, rolluiken, markiezen, veranda's en meer.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { primary: '#0F172A', secondary: '#334155', cta: '#0369A1', ctaHover: '#025a8c', background: '#F8FAFC', textDark: '#020617' },
+        fontFamily: { heading: ['Outfit','sans-serif'], body: ['Work Sans','sans-serif'] },
+      }}
+    }
+  </script>
+  <style>
+    body { font-family: 'Work Sans', sans-serif; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Outfit', sans-serif; }
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; align-items: center; justify-content: center; cursor: pointer; }
+    .lightbox.active { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 8px; }
+  </style>
+</head>
+<body class="bg-background text-textDark">
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-primary/95 backdrop-blur-sm z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="/" class="flex items-center gap-3 cursor-pointer">
+        <img src="images/logo.jpg" alt="JVS Zonwering logo" class="h-10 w-10 rounded-lg object-cover">
+        <span class="font-heading font-bold text-white text-xl">JVS Zonwering</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Home</a>
+        <a href="diensten.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Diensten</a>
+        <a href="over-ons.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Over Ons</a>
+        <a href="galerij.html" class="text-white border-b-2 border-cta pb-0.5 cursor-pointer font-medium">Galerij</a>
+        <a href="contact.html" class="text-white/80 hover:text-white transition-colors duration-200 cursor-pointer font-medium">Contact</a>
+        <a href="contact.html" class="bg-cta hover:bg-ctaHover text-white px-5 py-2.5 rounded-lg font-semibold transition-all duration-200 cursor-pointer">Offerte Aanvragen</a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-white cursor-pointer p-2 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-primary border-t border-white/10">
+      <div class="px-4 py-4 flex flex-col gap-3">
+        <a href="/" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Home</a>
+        <a href="diensten.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Diensten</a>
+        <a href="over-ons.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Over Ons</a>
+        <a href="galerij.html" class="text-white py-3 px-4 rounded-lg bg-white/10 cursor-pointer min-h-[44px] flex items-center">Galerij</a>
+        <a href="contact.html" class="text-white py-3 px-4 rounded-lg hover:bg-white/10 cursor-pointer min-h-[44px] flex items-center">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-24 pb-16 md:pt-32 md:pb-20 bg-primary">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+      <h1 class="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl text-white mb-4">Galerij</h1>
+      <p class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto">Een selectie uit onze projecten en realisaties.</p>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="py-20 bg-background">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        <div class="cursor-pointer overflow-hidden rounded-2xl aspect-video group" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="images/showcase1.png" alt="JVS Zonwering project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="cursor-pointer overflow-hidden rounded-2xl aspect-video group" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="images/showcase2.png" alt="JVS Zonwering project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="cursor-pointer overflow-hidden rounded-2xl aspect-video group" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="images/showcase3.png" alt="JVS Zonwering project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="cursor-pointer overflow-hidden rounded-2xl aspect-video group" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="images/showcase4.png" alt="JVS Zonwering project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="cursor-pointer overflow-hidden rounded-2xl aspect-video group" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="images/showcase5.png" alt="JVS Zonwering project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="cursor-pointer overflow-hidden rounded-2xl aspect-video group" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="images/google/google_place_1.jpg" alt="JVS Zonwering" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="cursor-pointer overflow-hidden rounded-2xl aspect-video group" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="images/google/google_place_2.jpg" alt="JVS Zonwering showroom" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="cursor-pointer overflow-hidden rounded-2xl aspect-video group" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="images/google/google_place_3.jpg" alt="JVS Zonwering" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="cursor-pointer overflow-hidden rounded-2xl aspect-video group" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="images/google/google_place_4.jpg" alt="JVS Zonwering" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="cursor-pointer overflow-hidden rounded-2xl aspect-video group" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="images/google/google_place_5.jpg" alt="JVS Zonwering" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="cursor-pointer overflow-hidden rounded-2xl aspect-video group" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="images/verandas.jpg" alt="Veranda's" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="cursor-pointer overflow-hidden rounded-2xl aspect-video group" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="images/schuifglaswanden.jpg" alt="Schuifglaswanden" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-primary">
+    <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-white mb-6">Geïnspireerd?</h2>
+      <a href="contact.html" class="bg-cta hover:bg-ctaHover text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 cursor-pointer min-h-[44px] inline-flex items-center">Vraag een Offerte Aan</a>
+    </div>
+  </section>
+
+  <footer class="bg-primary pt-12 pb-6 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-white/40 text-sm">© 2026 JVS Zonwering BV — KvK 64342077</p>
+      <p class="text-white/40 text-sm">Gebouwd door <a href="https://www.code-lieshout.nl" class="text-cta hover:text-white transition-colors duration-200 cursor-pointer">Code Lieshout</a></p>
+    </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="Vergroot beeld">
+  </div>
+
+  <script>
+    document.getElementById('menuBtn').addEventListener('click', () => { document.getElementById('mobileMenu').classList.toggle('hidden'); });
+    function openLightbox(src) { document.getElementById('lightboxImg').src = src; document.getElementById('lightbox').classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = ''; }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
+</body>
+</html>
